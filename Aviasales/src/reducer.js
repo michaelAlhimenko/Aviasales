@@ -56,8 +56,8 @@ const sortTickets = (tickets, sortingType) => {
     } else if (sortingType === 'optimal') {
       const durationA = a.segments.reduce((acc, segment) => acc + segment.duration, 0)
       const durationB = b.segments.reduce((acc, segment) => acc + segment.duration, 0)
-      const weightTime = 5
-      const weightPrice = 0.2
+      const weightTime = 7
+      const weightPrice = 0.1
       const optimalA = weightTime * durationA + weightPrice * a.price
       const optimalB = weightTime * durationB + weightPrice * b.price
 
