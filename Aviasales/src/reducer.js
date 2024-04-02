@@ -54,11 +54,18 @@ const sortTickets = (tickets, sortingType) => {
       const durationB = b.segments.reduce((acc, segment) => acc + segment.duration, 0)
       return durationA - durationB
     } else if (sortingType === 'optimal') {
+      // const durationA = a.segments.reduce((acc, segment) => acc + segment.duration, 0)
+      // const durationB = b.segments.reduce((acc, segment) => acc + segment.duration, 0)
+      // const optimal1 = durationA / tickets.length / (a.price / tickets.length)
+      // const optimal2 = durationB / tickets.length / (b.price / tickets.length)
       const durationA = a.segments.reduce((acc, segment) => acc + segment.duration, 0)
       const durationB = b.segments.reduce((acc, segment) => acc + segment.duration, 0)
-      const time1 = durationA + a.price / 100
-      const time2 = durationB + b.price / 100
-      return time1 - time2
+      const weightTime = 5
+      const weightPrice = 0.2
+      const optimalA = weightTime * durationA + weightPrice * a.price
+      const optimalB = weightTime * durationB + weightPrice * b.price
+
+      return optimalA - optimalB
     }
   })
 }
@@ -66,11 +73,9 @@ const sortTickets = (tickets, sortingType) => {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_SORTING':
-      // eslint-disable-next-line no-case-declarations
-      let sortiedData = sortTickets(state.dataVisible, action.payload)
       return {
         ...state,
-        dataVisible: sortiedData,
+        dataVisible: sortTickets(state.dataVisible, action.payload),
         counterShowedOfTickets: 5,
         sortingType: action.payload,
       }
