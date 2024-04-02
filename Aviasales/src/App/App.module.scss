@@ -116,7 +116,7 @@
 .content__filter{
 }
 .content__filter > button {
-  width: 50%;
+  width: 33.3%;
   height: 50px;
   background-color: #FFFFFF;
   border: #DFE5EC 1px solid;
@@ -129,7 +129,7 @@
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-.content__filter > button:nth-child(2){
+.content__filter > button:nth-child(3){
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }

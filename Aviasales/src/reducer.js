@@ -53,6 +53,12 @@ const sortTickets = (tickets, sortingType) => {
       const durationA = a.segments.reduce((acc, segment) => acc + segment.duration, 0)
       const durationB = b.segments.reduce((acc, segment) => acc + segment.duration, 0)
       return durationA - durationB
+    } else if (sortingType === 'optimal') {
+      const durationA = a.segments.reduce((acc, segment) => acc + segment.duration, 0)
+      const durationB = b.segments.reduce((acc, segment) => acc + segment.duration, 0)
+      const time1 = durationA + a.price / 100
+      const time2 = durationB + b.price / 100
+      return time1 - time2
     }
   })
 }

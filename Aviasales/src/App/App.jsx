@@ -143,6 +143,13 @@ const App = ({
               >
                 Самый быстрый
               </button>
+              <button
+                className={sortingType === 'optimal' ? style['content__button--active'] : null}
+                type="button"
+                onClick={() => setSorting('optimal')}
+              >
+                Оптимальный
+              </button>
             </div>
             <div className={style.content__body}>
               <Alert
