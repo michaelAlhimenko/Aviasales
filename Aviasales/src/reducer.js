@@ -13,6 +13,7 @@ const initialState = {
   ticketsLoaded: false,
   counterShowedOfTickets: 5,
   loading: 0,
+  subside: false,
 }
 
 const filterTickets = (tickets, checkboxes) => {
@@ -46,7 +47,8 @@ const sortTickets = (tickets, sortingType) => {
   if (sortingType === null) {
     return tickets
   }
-  return tickets.sort((a, b) => {
+  const newTickets = tickets
+  return newTickets.sort((a, b) => {
     if (sortingType === 'cheapest') {
       return a.price - b.price
     } else if (sortingType === 'fastest') {
@@ -112,6 +114,8 @@ const reducer = (state = initialState, action) => {
           counterShowedOfTickets: 5,
         }
       }
+    case 'OPEN_SUBSIDE':
+      return { ...state, subside: action.payload }
     case 'STOP_REQUARE':
       return { ...state, ticketsLoaded: action.payload }
     case 'SET_SEARCH_ID':

@@ -31,6 +31,10 @@ export const updateCouneterShowedOfTickets = (number) => {
     payload: number,
   }
 }
+export const openSubside = (data) => ({
+  type: 'OPEN_SUBSIDE',
+  payload: data,
+})
 export const updateShowedOfTicets = (number) => (dispatch) => {
   dispatch(updateCouneterShowedOfTickets(number))
 }

@@ -1,0 +1,44 @@
+.content__filter{
+    display: flex;
+    font-size: 14px;
+  }
+.content__filter > label {
+    display: flex;
+    width: 33.3%;
+    height: 50px;
+    background-color: #FFFFFF;
+    border: #DFE5EC 1px solid;
+    text-transform: uppercase;
+    font-weight:600;
+    color: #4A4A4A;
+    font-family: "Open Sans", sans-serif !important;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .content__filter > input[type=radio] {
+      display: none;
+  }
+  .content__filter label:first-child{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  .content__filter label:last-child{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  .content__filter > label:hover {
+    box-shadow:0px 0px 15px rgba(33, 150, 243, 0.3);
+  }
+  .content__filter > label:active {
+    background-color: #87beea;
+  }
+  .content__filter > .content__button--active{
+    background-color: #2196F3;
+    color: #fff;
+  }
+  @media (max-width: 767px) {
+    .content__filter{
+      font-size: 11px;
+    }
+  }

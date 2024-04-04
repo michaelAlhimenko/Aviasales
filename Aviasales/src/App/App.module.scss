@@ -1,3 +1,7 @@
+ul{
+  margin: 0;
+  padding: 0;
+}
 .disaplayNone{
   display: none;
 }
@@ -24,171 +28,20 @@
   position: fixed;
   top: 0;
 }
-.sidebar{
-  width: 232px;
-  height: 100%;
-  background-color: #FFFFFF;
-  border-radius: 7px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-.sidebar__filters{
-  display: flex;
-  flex-direction: column;
-  letter-spacing: 0;
-  padding-bottom: 10px;
-
-}
-.sidebar__wrapper{
-  display: flex;
-  align-items: center;
-  user-select: none;
-  cursor: pointer;
-}
-.sidebar__wrapper > label{
-  color: #4A4A4A;
-  font-size: 13px;
-  padding-left: 5px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  padding: 10px 20px 10px 20px;
-  height: 20px;
-}
-.sidebar__wrapper > label > input[type="checkbox"] {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border: 1px solid #9ABBCE;
-}
-.sidebar__wrapper > label > input[type="checkbox"] {
-  display: none;
-}
-.sidebar__wrapper > label > span {
-  height: 18px;
-  width: 20px;
-  border: 1.5px solid #9ABBCE;
-  display: inline-block;
-  position: relative;
-  border-radius: 3px;
-  cursor: pointer;
-  margin-right: 10px;
-}
-.sidebar__wrapper > label > [type=checkbox]:checked + span:before {
-  content: '✔';
-  position: absolute;
-  top: -2.5px;
-  left: 3.5px;
-  font-size: 17px;
-  color:#2196F3;
-}
-.sidebar__wrapper > label > [type=checkbox]:checked + span{
-  border: 1.5px solid #2196F3;
-}
-.sidebar__wrapper > label > input[type="checkbox"]:hover + label {
-    border-color: #5a5a5a;
-    cursor: pointer;
-}
-.sidebar__wrapper > label > input[type="checkbox"]:checked + label {
-  border-color: #00796b; 
-}
-.sidebar__wrapper > label:hover {
-  background-color: #F1FCFF;
-  cursor: pointer;
-}
-.sidebar > span{
-  font-size: 12px;
-  font-weight: 600;
-  padding: 20px;
-  display: block;
-  text-transform: uppercase;
-}
-.content{
+.body{
   width: 100%;
   max-width: 592px;
 }
-.content__body{
+.body__content > ul{
   margin: 20px 0;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.content__filter{
-}
-.content__filter > button {
-  width: 33.3%;
-  height: 50px;
-  background-color: #FFFFFF;
-  border: #DFE5EC 1px solid;
-  text-transform: uppercase;
-  font-weight:600;
-  color: #4A4A4A;
-  font-family: "Open Sans", sans-serif !important;
-}
-.content__filter > button:nth-child(1){
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-.content__filter > button:nth-child(3){
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-.content__filter > button:hover {
-  box-shadow:0px 0px 15px rgba(33, 150, 243, 0.3);
-}
-.content__filter > button:active {
-  background-color: #87beea;
-}
-.content__filter > .content__button--active{
-  background-color: #2196F3;
-  color: #fff;
-}
-.content__price{
-  color: #2196F3;
-  font-size: 24px;
-  font-weight: 600;
-}
-.content__body{
-}
-.content__item{
-  padding: 20px;
-  background-color: #FFFFFF;
-  border-radius: 5px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-.content__header{
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-.content__details{
-  display: grid;
-  grid-template-columns: 1.15fr 1.15fr 0.7fr;
-  margin-bottom: 20px;
-}
-.content__details:nth-last-child(1){
-  margin-bottom: 0;
-}
-.content__title{
-  color: #A0B0B9;
-  font-size: 12px;
-  font-weight:600;
-  text-transform: uppercase;
-
-}
-.content__description{
-  font-size: 14px;
-  font-weight: 500;
-
-}
-.content__wrapper{
-  display: flex;
-  flex-direction: column;
-}
 .content__button{
   width: 100%;
 }
-.content__button > button {
+.body__button > button {
   width: 100%;
   height: 50px;
   background-color: #2196F3;
@@ -200,14 +53,31 @@
   font-weight: 600;
   font-family: "Open Sans", sans-serif !important;
 }
-.content__logo {
-  width: 100px;
+.button__filter{
+  width: 50px;
   height: 50px;
-  margin-right: 10px;
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  border-radius: 100%;
+  border: none;
+  background-color: #2196F3;
+  background-image: url('./pngegg.png');
+  background-position: 50% 60%;
+  background-repeat: no-repeat;
+  display: none;
 }
-
-@media (max-width: 600px) {
-
+@media (max-width: 767px) {
+  .app__frame{
+    display: block;
+    padding: 0 10px;
+  }
+  .body{
+    max-width: 100%;
+  }
+  .button__filter{
+    display: block;
+  }
 }
 
 

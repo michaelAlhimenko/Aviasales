@@ -1,0 +1,107 @@
+.sidebar{
+    width: 232px;
+    height: 100%;
+    background-color: #FFFFFF;
+    border-radius: 7px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .sidebar__filters{
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 0;
+    padding-bottom: 10px;
+  
+  }
+  .sidebar__wrapper{
+    display: flex;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+  }
+  .sidebar__wrapper > label{
+    color: #4A4A4A;
+    font-size: 13px;
+    padding-left: 5px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 20px 10px 20px;
+    height: 20px;
+  }
+  .sidebar__wrapper > label > input[type="checkbox"] {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #9ABBCE;
+  }
+  .sidebar__wrapper > label > input[type="checkbox"] {
+    display: none;
+  }
+  .sidebar__wrapper > label > span {
+    height: 18px;
+    width: 20px;
+    border: 1.5px solid #9ABBCE;
+    display: inline-block;
+    position: relative;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  .sidebar__wrapper > label > [type=checkbox]:checked + span:before {
+    content: '✔';
+    position: absolute;
+    top: -2.5px;
+    left: 3.5px;
+    font-size: 17px;
+    color:#2196F3;
+  }
+  .sidebar__wrapper > label > [type=checkbox]:checked + span{
+    border: 1.5px solid #2196F3;
+  }
+  .sidebar__wrapper > label > input[type="checkbox"]:hover + label {
+      border-color: #5a5a5a;
+      cursor: pointer;
+  }
+  .sidebar__wrapper > label > input[type="checkbox"]:checked + label {
+    border-color: #00796b; 
+  }
+  .sidebar__wrapper > label:hover {
+    background-color: #F1FCFF;
+    cursor: pointer;
+  }
+  .sidebar > span{
+    font-size: 12px;
+    font-weight: 600;
+    padding: 20px;
+    display: block;
+    text-transform: uppercase;
+  }
+  .button__close{
+    display: none;
+  }
+  @media (max-width: 686px) {
+    .sidebar{
+        position: fixed;
+        top: 0;
+        transform: translateX(-200%);
+        transition: all 1s;
+    }
+    .sidebar--active{
+        transform: translateX(0);
+    }
+    .button__close{
+      display: block;
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        border-radius: 100%;
+        border: none;
+        background-color: #2196F3;
+        background-image: url('./cross.png');
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+  }
